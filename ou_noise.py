@@ -1,17 +1,20 @@
-import numpy as np
 import random
 import copy
+from collections import namedtuple, deque
+import numpy as np
+import model
 
 class OUNoise:
     """Ornstein-Uhlenbeck process."""
 
     def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.2):
         """Initialize parameters and noise process."""
+        random.seed(seed)
+        np.random.seed(seed)
         self.size = size
         self.mu = mu * np.ones(size)
         self.theta = theta
         self.sigma = sigma
-        self.seed = random.seed(seed)
         self.reset()
 
     def reset(self):
