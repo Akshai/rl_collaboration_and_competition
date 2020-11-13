@@ -28,8 +28,8 @@ state_size = states.shape[1]
 
 
 agent = MADDPG(seed=2, noise_start=0.5, update_every=2, gamma=1, t_stop_noise=30000)
-n_episodes = 100
-max_t = 1000
+n_episodes = 6000
+max_t = 3000
 scores = []
 scores_deque = deque(maxlen=100)
 scores_avg = []
